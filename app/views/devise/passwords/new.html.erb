@@ -1,0 +1,27 @@
+<section id="contentino" data-info="registration">
+<div class="topBlock">
+    <hr />
+    <center>
+        <h1>Забыли пароль?</h1>
+    </center>
+    <p>
+        Мы можем вам его напомнить. Для этого введите почту-логин и следуйте интсрукциям.
+    </p>
+</div>
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+    <table align="center">
+        <tbody>
+            <tr>
+              <td><label for="email">* Электронная почта</label></td>
+            </tr>
+            <tr>
+              <td><%= f.input :email, required: true, name: "email", label: false, placeholder: "vasiualiy_lohankin@gmail.com" %></td>
+            </tr>
+            <tr>
+              <td><button type="submit" class="button" id="registerBtn"><p>выслать пароль</p></button></td>
+            </tr>
+        </tbody>
+    </table>
+<% end %>
+</section>
+

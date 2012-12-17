@@ -1,0 +1,7 @@
+<% if (user_signed_in?) && (current_user.has_role? :admin) %>
+<%= link_to "Панель управления", "#", id: "actions", class: "default"  %>
+<% end %>
+<%= link_to(current_user.username, user_path(current_user)) %>
+<%= link_to(destroy_user_session_path, method: "delete")  do %>
+    <%= image_tag("logout.png", alt: "Выйти") %>
+<% end %>

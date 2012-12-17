@@ -1,0 +1,67 @@
+<section id="contentino" data-info="comments">
+    <div class="tables">
+        <h1>Пользователи</h1>
+        <div class="filters">
+            <div class="add">
+                <input type="text" name="name" placeholder="Имя пользователя"/><i></i>
+                <a href="#" class="simpleBtn">Найти</a>
+            </div>
+            <div class="added">
+                <input type="text" name="email" placeholder="Электронная почта"/><i></i><span></span>
+            </div>
+        </div>
+        <div class="pagination">
+            <ul>
+                <li><a href="#">← Назад</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li class="highlight"><a href="#">Вперед →</a></li>
+            </ul>
+        </div>
+        <table class="table table-bordered table-striped table-hover">
+
+            <thead>
+                <tr>
+                    <th class="sort">Имя пользователя <i class="t"></i></th>
+                    <th class="sort">Электронная почта <i class="b"></i></th>
+                    <th>Заблокировать</th>
+                    <th class="center">Редактировать</th>
+                    <th class="center">Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                    <td class="whiteSpace"><%= link_to(user.username, user_path(user)) %></td>
+                    <td><%= user.email %></td>
+                    <td><center><input type="checkbox" /></center></td>
+                    <td class="edit">
+                        <%= link_to(edit_user_path(user)) do %>
+                            <div></div>
+                        <% end %>
+                    </td>
+                    <td class="remove">
+                      <%= link_to(user, method: :delete, data: { confirm: "You sure?" }) do %>
+                          <div></div>
+                      <% end %>
+                    </td>
+                </tr>
+          <% end %>
+            </tbody>
+        </table>
+        <a href="#" class="simpleBtn">Сохранить</a>
+        <div class="pagination">
+            <ul>
+                <li><a href="#">← Назад</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li class="highlight"><a href="#">Вперед →</a></li>
+            </ul>
+        </div>
+        <div id="backToTop" onclick="javascript:scroll(0,0)">На самый верх</div>
+    </div>
+</section>

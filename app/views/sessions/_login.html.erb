@@ -1,0 +1,5 @@
+<%= link_to(new_user_session_path, class: "default", id: "authorization")  do %>
+    <%= content_tag(:span, 'Авторизация') %>
+    <%= image_tag("authArr.png", alt: "Авторизация") %>
+<% end %>
+<%= link_to content_tag(:span, 'Регистрация', id: 'registration'), new_user_registration_path %>

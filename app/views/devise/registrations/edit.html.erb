@@ -1,0 +1,79 @@
+<section id="contentino" data-info="registration">
+<div class="topBlock">
+    <hr />
+    <center>
+        <h1>Редактирование профиля</h1>
+    </center>
+</div>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+    <table align="center">
+        <tbody>
+            <tr>
+              <td><label for="login">* Имя пользователя</label></td>
+              <td><label for="userFirstName">Имя</label></td>
+            </tr>
+            <tr>
+              <td><%= f.input :username, name: "login", label: false, autofocus: true, placeholder: "vasiualiy_lohankin_123" %></td>
+              <td><%= f.input :name, name: "userFirstName", label: false, placeholder: "Васисуалий" %></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="small" >От 3-х и до 20-ти символов.</td>
+            </tr>
+
+            <tr>
+              <td><label for="email">* Электронная почта</label></td>
+              <td><label for="userLastName">Фамилия</label></td>
+            </tr>
+            <tr>
+              <td><%= f.input :email, required: true, name: "email", label: false, placeholder: "vasiualiy_lohankin@gmail.com" %></td>
+              <td><%= f.input :surname, name: "userLastName", label: false, placeholder: "Лоханкин" %></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="small" >Ваш логин по умолчаниию скрыт от других пользователей.</td>
+            </tr>
+            <tr>
+                <td><label for="password">* Пароль</label></td>
+                <td><label for="gender">Пол</label></td>
+            </tr>
+            <tr>
+                <td><%= f.input :password, required: false, name: "password", label: false, placeholder: "пароль" %></td>
+                <td class="gender" >
+                  <%= f.input :female, as: :radio_buttons, label: false, class: "last", checked: false, collection: [['Мужской', false], ['Женский', true]] %>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="small" >оставьте это поле пустым, если вы не хотите его изменить</td>
+            </tr>
+            <tr>
+                <td><label for="confirmPassword">* Подтверждение пароля</label></td>
+                <td><label for="birthday">День рождения</label></td>
+            </tr>
+            <tr>
+                <td><%= f.input :password_confirmation, required: false, name: "confirmPassword", label: false, placeholder: "подтвердите пароль" %></td>
+                <td class="selectBL">
+                  <%= f.text_field :born_on, id: "dp5", 'data-behaviour' => 'datepicker' %>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="small" >От шести и до 50-ти символов.</td>
+            </tr>
+            <tr>
+                 <td><label for="currentPassword">* Текущий пароль</label></td>
+             </tr>
+             <tr>
+                 <td><%= f.input :current_password, required: true, name: "currentPassword", label: false, placeholder: "Текущий пароль" %></td>
+             </tr>
+             <tr>
+                 <td colspan="2" class="small" >Нам нужнен ваш текущий пароль для подтверждения ваших изменений</td>
+             </tr>
+            <tr>
+                <td>Нажимая кнопку "Зарегестрироваться" вы подтверждаете свое согласие с условиями <a href="#">пользовательского соглашения</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="button" id="registerBtn"><p>обновить</p></button></td>
+            </tr>
+        </tbody>
+    </table>
+<% end %>
+</section>

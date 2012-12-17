@@ -1,0 +1,277 @@
+<section id="contentino" data-info="comments">
+    <header>
+        <div class="left">
+            <div class="sort">Сортировка новостей <i class="time"></i><i class="like"></i></div>
+            <div class="create">Создать новость <i class="create"></i></div>
+        </div>
+        <div class="right">
+            <form class="form-search">
+              <input type="text" class="input-medium search-query" placeholder="поиск по сайту">
+              <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+    </header>
+    <div class="post">
+        <div class="postInfo">
+            <article>
+                <h1 class="title"><%= @post.description %></h1>
+                <div class="topBlock">
+                    <p><a href="" class="author">steak house odessa</a>, <%= @post.updated_at.strftime("%e %B, %H:%M" ) %>, 1341 Просмотров</p>
+                </div>
+                <p class="content">
+                <%= raw(@post.body) %>
+                <div class="bottomBlock">
+                    <div class="tags">Теги:
+                        <a href="#" class="bold">Рестораны</a>,
+                        <a href="#">stake house odessa</a>,
+                        <a href="#">бифштекс</a>
+                    </div>
+                    <hr />
+                    <div class="rating">
+                        Рейтинг:
+                        <p class="top"><span>96</span><i></i></p>
+                        <p>87.92</p>
+                        <p class="down"><span>20</span><i></i></p>
+                    </div>
+                    <div class="likeBox"></div>
+                    <hr />
+                </div>
+
+            </article>
+            <div class="rightPart"></div>
+        </div>
+        <div class="comments">
+            <div class="commentBlock">
+                <a href=""><img src="img/fake/avatar/2.png" alt="" /></a>
+                <textarea name="comment"></textarea>
+                <p><a href="registration.html">Зарегестрируйтесь</a>чтобы оставлять комментарии.</p>
+            </div>
+            <ul>
+                <li class="positive">
+                    <a href=""><img src="img/fake/avatar/2.png" alt="" /></a>
+                    <div>
+                        <header><a href="">i have lost my keds</a>, <span>2 часа назад</span></header>
+                        <p>
+                            Меня твои новости просто доебали уже, я уже не могу их читать, блядь. Одна новость охуительней другой, просто.
+                            Про рестораны, блядь. Про какую-то хуйню, кинотеатры. Чё ты несешь-то вообще? Ты можешь заткнуться? Акцию, блядь, объявляет -
+                            по магазинам пойдем. Чего, блядь? Про что несешь? Вообще охуеть.
+                        </p>
+                        <footer>
+                            <div class="rating">
+                                <i class="like">+</i><span>56</span><i class="unlike">-</i>
+                            </div>
+                            <a href="" class="reply">Ответить →</a>
+                            <a href="" class="edit">Редактировать</a>
+                            <div class="remove"><i></i></div>
+                        </footer>
+                    </div>
+                    <ul>
+                        <li class="positive">
+                            <a href=""><img src="img/fake/avatar/1.png" alt="" /></a>
+                            <div>
+                                <header><a href="">Мария</a>, <span>2 часа назад</span></header>
+                                <p>
+                                    i have lost my keds, я считаю ваше поведение не уместным. Со всех точек зрения это очень интересная история. Я совершенно не понимаю, кто и зачем поставил вам положительные отзывы за ваш комментарий. Я искренне надеюсь, что модерация удалит ваш комментарий как можно быстрее!
+                                </p>
+                                <footer>
+                                    <div class="rating">
+                                        <i class="like">+</i><span>14</span><i class="unlike">-</i>
+                                    </div>
+                                    <a href="" class="reply">Ответить →</a>
+                                    <a href="" class="edit">Редактировать</a>
+                                    <div class="remove"><i></i></div>
+                                </footer>
+                            </div>
+                            <ul>
+                                <li class="negative">
+                                    <a href=""><img src="img/fake/avatar/2.png" alt="" /></a>
+                                    <div>
+                                        <header><a href="">i have lost my keds</a>, <span>2 часа назад</span></header>
+                                        <p>
+                                            Мария, идите на хуй
+                                        </p>
+                                        <footer>
+                                            <div class="rating">
+                                                <i class="like">+</i><span>23</span><i class="unlike">-</i>
+                                            </div>
+                                            <a href="" class="reply">Ответить →</a>
+                                            <a href="" class="edit">Редактировать</a>
+                                            <div class="remove"><i></i></div>
+                                        </footer>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="positive">
+                            <a href=""><img src="img/fake/avatar/3.png" alt="" /></a>
+                            <div>
+                                <header><a href="">sweet natalie</a>, <span>2 часа назад</span></header>
+                                <p>
+                                    Мария, я с тобой совершенно согласна. +1
+                                </p>
+                                <footer>
+                                    <div class="rating">
+                                        <i class="like">+</i><span>0</span><i class="unlike">-</i>
+                                    </div>
+                                    <a href="" class="reply">Ответить →</a>
+                                    <a href="" class="edit">Редактировать</a>
+                                    <div class="remove"><i></i></div>
+                                </footer>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="positive">
+                    <a href=""><img src="img/fake/avatar/4.jpg" alt="" /></a>
+                    <div>
+                        <header><a href="">PandaBoy</a>, <span>1 час назад</span></header>
+                        <p>
+                            Впечатление дает возврат к стереотипам, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания. Аллегория, согласно традиционным представлениям, интегрирует мелодический цикл, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.
+                        </p>
+                        <footer>
+                            <div class="rating">
+                                <i class="like">+</i><span>14</span><i class="unlike">-</i>
+                            </div>
+                            <a href="" class="reply">Ответить →</a>
+                            <a href="" class="edit">Редактировать</a>
+                            <div class="remove"><i></i></div>
+                        </footer>
+                    </div>
+                </li>
+                <li class="positive">
+                    <a href=""><img src="img/fake/avatar/5.jpg" alt="" /></a>
+                    <div>
+                        <header><a href="">kitty</a>, <span>1 час назад</span></header>
+                        <p>
+                            Генезис свободного стиха, несмотря на то, что все эти характерологические черты отсылают не к единому образу нарратора, отталкивает поэтический коммунальный модернизм, например, "Борис Годунов" А.С.Пушкина, "Кому на Руси жить хорошо" Н.А.Некрасова, "Песня о Соколе" М.Горького и др. Гиперцитата доступна. В отличие от произведений поэтов барокко.
+                        </p>
+                        <footer>
+                            <div class="rating">
+                                <i class="like">+</i><span>18</span><i class="unlike">-</i>
+                            </div>
+                            <a href="" class="reply">Ответить →</a>
+                            <a href="" class="edit">Редактировать</a>
+                            <div class="remove"><i></i></div>
+                        </footer>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="pagination">
+            <ul>
+                <li><a href="#">← Назад</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li class="highlight"><a href="#">Вперед →</a></li>
+            </ul>
+        </div>
+        <div class="similars">
+            <h1>Похожие новости:</h1>
+            <ul class="thumbnails">
+                <li class="span3">
+                    <div class="thumbnail">
+                        <a href=""><img src="img/fake/fake_index_image/1.jpg" alt=""></a>
+                        <div class="caption">
+                            <h5 data-type="restaurant">Рестораны</h5><!-- hotel, restaurant -->
+                            <a href="" class="edit"></a>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <div class="bottom">
+                                <div class="left">
+                                    <a href="" class="name">nike sports</a>
+                                    <div class="likes">
+                                        <i class="top"></i>
+                                        <span>217</span>
+                                        <i class="down"></i>
+                                    </div>
+                                    <time>17 сентября, 14:17</time>
+                                </div>
+                                <div class="right">
+                                    <a href="" class="comments"><i></i>13</a>
+                                    <p class="views"><i></i>2245</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3">
+                    <div class="thumbnail">
+                        <a href=""><img src="img/fake/fake_index_image/2.jpg" alt=""></a>
+                        <div class="caption">
+                            <h5 data-type="hotel">Гостиницы</h5><!-- hotel, restaurant -->
+                            <a href="" class="edit"></a>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <div class="bottom">
+                                <div class="left">
+                                    <a href="" class="name">nike sports</a>
+                                    <div class="likes">
+                                        <i class="top"></i>
+                                        <span>217</span>
+                                        <i class="down"></i>
+                                    </div>
+                                    <time>17 сентября, 14:17</time>
+                                </div>
+                                <div class="right">
+                                    <a href="" class="comments"><i></i>13</a>
+                                    <p class="views"><i></i>2245</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3">
+                    <div class="thumbnail">
+                        <a href=""><img src="img/fake/fake_index_image/3.jpg" alt=""></a>
+                        <div class="caption">
+                            <h5 data-type="shop">Шоппинг</h5><!-- hotel, restaurant -->
+                            <a href="" class="edit"></a>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <div class="bottom">
+                                <div class="left">
+                                    <a href="" class="name">nike sports</a>
+                                    <div class="likes">
+                                        <i class="top"></i>
+                                        <span>217</span>
+                                        <i class="down"></i>
+                                    </div>
+                                    <time>17 сентября, 14:17</time>
+                                </div>
+                                <div class="right">
+                                    <a href="" class="comments"><i></i>13</a>
+                                    <p class="views"><i></i>2245</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="span3">
+                    <div class="thumbnail">
+                        <a href=""><img src="img/fake/fake_index_image/4.jpg" alt=""></a>
+                        <div class="caption">
+                            <h5 data-type="shop">Шоппинг</h5><!-- hotel, restaurant -->
+                            <a href="" class="edit"></a>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <div class="bottom">
+                                <div class="left">
+                                    <a href="" class="name">nike sports</a>
+                                    <div class="likes">
+                                        <i class="top"></i>
+                                        <span>217</span>
+                                        <i class="down"></i>
+                                    </div>
+                                    <time>17 сентября, 14:17</time>
+                                </div>
+                                <div class="right">
+                                    <a href="" class="comments"><i></i>13</a>
+                                    <p class="views"><i></i>2245</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="backToTop" onclick="javascript:scroll(0,0)">На самый верх</div>
+    </div>
+</section>

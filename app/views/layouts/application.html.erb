@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allcity</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+     chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<!--[if IE 8]>
+<script type="text/javascript">
+    var E  = ('article:aside:audio:canvas:figure:footer:header:hgroup:nav:section:video:output:detalis:keygen:meter:progress:figcaption:mark:summary:time:wbr').split(':');
+    for (var c = 0; c < E.length; c++) {
+        document.createElement(E[c]);
+    }
+</script>
+<![endif]-->
+<div class="container">
+    <header id="hedirio">
+        <%= link_to root_path do %>
+          <%= image_tag("logotype.png", alt: "All city") %>
+        <% end %>
+        <!--<div class="location">-->
+            <!--Вы находитесь в городе-->
+            <!--<div class="btn-group">-->
+                <!--<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">-->
+                    <!--Одесса-->
+                    <!--<span class="caret"></span>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu">-->
+                    <!--<li><a href="">Киев</a></li>-->
+                    <!--<li><a href="">Львов</a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="userBlock">
+          <%= render partial: 'sessions/manager' %>
+        </div>
+    </header>
+    <div id="authBlock" class=""><!--if error add class .error-->
+      <%= simple_form_for("user", url: user_session_path, html: {id: "sign_in"}, remote: true, format: :json) do |f| %>
+          <h1>Авторизация</h1>
+          <%= f.input :email, type: "email", name: "mainEmail", label: false, placeholder: "электронная почта" %>
+          <%= f.input :password, type: "password", name: "mainPassword", label: false, placeholder: "пароль" %>
+          <button type="submit" class="button" id="auth"><p>авторизироваться</p></button>
+          <div class="button"><p>почта или пароль неверны</p></div>
+          <%= link_to(new_password_path("user"), class: "button", id: "forgot") do %>
+              <p>напомнить пароль?</p>
+          <% end %>
+      <% end %>
+        <div>
+            <h1>Нет аккаунта?</h1>
+            <p>Только зарегистрированные пользователи могут оставлять комментарии и отзвывы.</p>
+            <%= link_to(new_user_registration_path, id: 'register', class: "button") do %>
+               <%= content_tag(:p, 'зарегистрироваться') %>
+            <% end %>
+        </div>
+    </div>
+    <ul id="actionBlock">
+        <li>
+          <%= link_to(users_path, :"data-info" => "users") do %>
+            <p>Юзеры</p>
+            <span>+<%= @users.size %><i></i></span>
+          <% end %>
+        </li>
+        <li>
+          <a href="#" data-info="news" ><p>Новости</p><span>+9<i></i></span></a>
+        </li>
+        <li><a href="#" data-info="catalog" ><p>Справочник</p><i></i></a></li>
+    </ul>
+    <nav class="navbar" id="menunio">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li class="active">
+                      <%= link_to "Новости", posts_path %>
+                    </li>
+                    <li><a href="#">Рестораны</a></li>
+                    <li><a href="#">Ночная жизнь</a></li>
+                    <li><a href="#">Шоппинг</a></li>
+                    <li><a href="#">Торговые центры</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="report"></div>
+    <div id="reportContent">
+        <div class="closePop" onclick="closePop('reportContent')" ></div>
+        <form action="post">
+            <h1>Сообщение об ошибке</h1>
+            <p>Выберите тип ошибки и опишите подробности используя следующие формы.</p>
+            <label for="error">Тип ошибки</label>
+            <select name="error">
+                <option value="-1">Выберите тип ошибки</option>
+                <option value="1">Ошибка_1</option>
+                <option value="2">Ошибка_2</option>
+                <option value="3">Ошибка_3</option>
+            </select>
+            <label for="errorDesc">Описание ошибки</label>
+            <textarea name="errorDesc"></textarea>
+            <button class="simpleBtn" type="suubmit">сообщить</button>
+        </form>
+    </div>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+    <footer id="footerino">
+        <div class="copyright">
+            <p>© 2012 портал All City.</p>
+            <p>Электронная почта для контактов - <%= mail_to "contact@allcity.ua", "contact@allcity.ua", encode: "hex"%></p>
+        </div>
+        <ul>
+            <li class="active"><a href="#">Новости</a></li>
+            <li><a href="#">Рестораны</a></li>
+            <li><a href="#">Ночная жизнь</a></li>
+            <li><a href="#">Шоппинг</a></li>
+            <li><a href="#">Торговые центры</a></li>
+        </ul>
+    </footer>
+</div>
+<%= tinymce :language => "ru" %>
+</body>
+</html>

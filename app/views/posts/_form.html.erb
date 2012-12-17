@@ -1,0 +1,44 @@
+<%= simple_form_for(@post, name: "create", id: "createPost") do |f| %>
+    <div class="topBlock">
+        <div>
+            <label for="description">Описание:</label>
+            <%= f.input :description, name: "description", label: false, wrapper: false %>
+            <span>-	Краткое описание новости, до 100 символов.</span>
+        </div>
+        <div>
+            <label for="subject">Тема:</label>
+            <%= f.input :subject, name: "subject", label: false, wrapper: false %>
+            <span>- Заголовок вашей новости.</span>
+        </div>
+        <div>
+            <label for="category">Категория:</label>
+            <select name="category">
+                <option value="0">Выберите категорию</option>
+                <option value="1">category_1</option>
+                <option value="2">category_2</option>
+                <option value="3">category_3</option>
+                <option value="4">category_4</option>
+                <option value="5">category_5</option>
+            </select>
+            <label for="tags">Теги:</label>
+            <input type="text" name="tags" />
+            <span>- Перечислите желаемые теги через запятую.</span>
+        </div>
+        <div>
+            <label for="preview">Превью:</label>
+            <input type="file" id="preview" name="preview" />
+            <a href="" id="previewBtn" class="button" ><p>Выбрать файл</p></a>
+            <span>- Миниатюрное изобразение для новостной странички. Картинка будет	сжата до 200 пикселей в высоту и 220 в ширину.</span>
+        </div>
+    </div>
+    <div class="tiny">
+      <%= f.input :body, :input_html => { :class => 'tinymce' }, rows: 15, cols: 80, id: "elem1", name: "elm1", wrapper: false, label: false %>
+    </div>
+    <div class="bottomBlock">
+        <a href="#" id="toPreModeration" class="button"><p>На премодерацию</p></a>
+        <a href="#" id="miniPreview" class="button"><p>Превью миниатюры</p></a>
+        <a href="#" id="newsPreview" class="button"><p>Превью новости</p></a>
+      <button type="submit" id="send" class="button"><p>Отправить</p></button>
+    </div>
+<% end %>
+

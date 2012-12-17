@@ -1,0 +1,52 @@
+/*mozilla*/
+@-moz-document url-prefix() 
+{
+	#contentino[data-info="registration"] .topBlock p a{top: 8px}
+	.profile .rightPart .invite input, .container .right form input{font-size: 11px;}
+	.hotels .rightPart .events ul li hr{display:none;}
+	.hotels .rightPart .firstOfTop ul li a:first-child p,
+	.hotels .rightPart .newSale li a:first-child p{margin-top: -17px;}
+}
+
+/*opera*/
+_:-o-prefocus,#contentino[data-info="registration"] .topBlock p a{top: 8px}
+_:-o-prefocus,.profile .rightPart .invite input, .container .right form input{font-size: 11px;}
+_:-o-prefocus,.hotels .rightPart .events ul li hr{display:none;}
+
+/*ie9*/
+.ie9 #menunio .nav > li{margin-right: 26px}
+.ie9 #contentino[data-info="registration"] .topBlock p a{top: 8px;}
+.ie9 .hotels .rightPart .hh ul li a:first-child p,
+.ie9 .hotels .rightPart .firstOfTop ul li a:first-child p,
+.ie9 .hotels .rightPart .newSale li a:first-child p{margin-top: -17px;}
+.ie9 .widgets div[data-class="days"] div{margin-right: 12px;}
+.ie9 .edit .leftPart div[data-class="logotype"] .right{margin-left: 40px;}
+
+
+/*ie8*/
+.ie8 #menunio .nav > li{margin-right: 26px}
+.ie8 #hedirio .userBlock > a{display: inline-block;}
+.ie8 #hedirio .userBlock > a img{display: none;}
+.ie8 #contentino[data-info="main"] .contentBlock .rightPart .social a{margin-right: 18px;}
+.ie8 #contentino[data-info="registration"] .topBlock p a{top: 8px}
+.ie8 #contentino[data-info="create"] .createBlock form .topBlock > div input[type="file"]{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
+.ie8 .resultContent .event .calendar p{font-size: 10px;}
+.ie8 .hotels .rightPart .hh ul li a:first-child p,
+.ie8 .hotels .rightPart .firstOfTop ul li a:first-child p,
+.ie8 .hotels .rightPart .newSale li a:first-child p{margin-top: -17px;}
+.ie8 .hotels .leftPart .filterResult ul li{
+	height: 500px;
+	margin-right: 0;
+	margin-left: 11px;
+}
+.ie8 .hotels .leftPart .filterResult ul{
+	position:relative;
+	left: -11px;
+	width: 696px;
+}
+.ie8 .trade .resultContent .event .calendar p{
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 35px;
+}
+.ie8 .trade .resultContent .event .calendar p:first-child{margin-top: 6px;}
